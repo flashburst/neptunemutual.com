@@ -2,8 +2,6 @@
 import Homepage from "../views/Homepage.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Seo from "../components/Seo.astro";
-
-import styles from "./index.scss?inline";
 ---
 
 <BaseLayout headerStyle={"default"}>
@@ -16,7 +14,7 @@ import styles from "./index.scss?inline";
       imageAlt: "Neptune Mutual Open Graph Banner",
     }}
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link slot="header" rel="stylesheet" href="/stylesheets/index.css" />
   <Homepage />
 
   <Fragment slot="footer">

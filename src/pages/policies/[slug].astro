@@ -5,7 +5,6 @@ import Seo from "../../components/Seo.astro";
 
 import * as dns from "../../../util/dns";
 import * as api from "../../../service/api";
-import styles from "./index.scss?inline";
 import { Api } from "../../../types/enum";
 
 interface Props {
@@ -42,7 +41,7 @@ const ogImageUrl = page.meta.image?.url
       imageAlt: page.meta.image?.alt,
     }}
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link slot="header" rel="stylesheet" href="/stylesheets/policies/index.css" />
   <PolicyPage pages={pages} page={page} />
 
   <Fragment slot="footer">

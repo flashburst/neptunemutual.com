@@ -4,7 +4,6 @@ import PolicyPage from "../../views/PolicyPage.astro";
 import Seo from "../../components/Seo.astro";
 
 import * as api from "../../../service/api";
-import styles from "./index.scss?inline";
 import { Api } from "../../../types/enum";
 
 const pages = await api.getEnumerable<Page>(Api.Policy, 1000, 0);
@@ -21,7 +20,7 @@ const [page] = pages;
       imageAlt: "Neptune Mutual Policies",
     }}
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link slot="header" rel="stylesheet" href="/stylesheets/index.css" />
   <PolicyPage pages={pages} page={page} />
 
   <Fragment slot="footer">

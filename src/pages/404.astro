@@ -2,8 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import NotFound from "../views/404.astro";
 import Seo from "../components/Seo.astro";
-
-import styles from "./404.scss?inline";
 ---
 
 <BaseLayout headerStyle={"default"}>
@@ -18,7 +16,7 @@ import styles from "./404.scss?inline";
     }}
     noindex
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link slot="header" rel="stylesheet" href="/stylesheets/404.css" />
 
   <NotFound />
 

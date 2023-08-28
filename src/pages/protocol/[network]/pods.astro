@@ -2,8 +2,6 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Seo from "../../../components/Seo.astro";
 
-import styles from "../protocol.scss?inline";
-
 import * as api from "../../../../service/api";
 import { Api } from "../../../../types/enum";
 import HeaderSection from "../../../components/HeaderSection.astro";
@@ -24,7 +22,11 @@ const t = (x: string) => x;
       imageAlt: "PODs / Neptune Mutual Protocol Contracts on Arbitrum",
     }}
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link
+    slot="header"
+    rel="stylesheet"
+    href="/stylesheets/protocol/protocol.css"
+  />
 
   <HeaderSection
     color={"basic"}

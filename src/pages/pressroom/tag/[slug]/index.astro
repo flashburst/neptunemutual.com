@@ -4,7 +4,6 @@ import Pressroom from "../../../../views/Pressroom.astro";
 import Seo from "../../../../components/Seo.astro";
 
 import * as api from "../../../../../service/api";
-import styles from "../../index.scss?inline";
 import { Api } from "../../../../../types/enum";
 
 export async function getStaticPaths() {
@@ -43,7 +42,11 @@ const { news, tag, currentPage, totalPages, data } = Astro.props;
     }}
     noindex
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link
+    slot="header"
+    rel="stylesheet"
+    href="/stylesheets/pressroom/index.css"
+  />
 
   <Pressroom
     currentPage={currentPage}

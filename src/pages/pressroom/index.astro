@@ -4,7 +4,6 @@ import Pressroom from "../../views/Pressroom.astro";
 import Seo from "../../components/Seo.astro";
 
 import * as api from "../../../service/api";
-import styles from "./index.scss?inline";
 import { Api } from "../../../types/enum";
 
 const POSTS_PER_PAGE = 4;
@@ -30,7 +29,11 @@ const newsPosts = await api.getEnumerable<NewsItem>(Api.News, 1000, 0);
       imageAlt: "Neptune Mutual Press Room",
     }}
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link
+    slot="header"
+    rel="stylesheet"
+    href="/stylesheets/pressroom/index.css"
+  />
 
   <Pressroom
     currentPage={1}

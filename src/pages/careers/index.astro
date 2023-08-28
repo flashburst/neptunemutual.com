@@ -4,7 +4,6 @@ import Careers from "../../views/Careers.astro";
 import Seo from "../../components/Seo.astro";
 
 import * as api from "../../../service/api";
-import styles from "./index.scss?inline";
 import { Api } from "../../../types/enum";
 
 const vacancies = await api.getEnumerable<Vacancy>(Api.Vacancy, 1000, 0);
@@ -20,7 +19,7 @@ const vacancies = await api.getEnumerable<Vacancy>(Api.Vacancy, 1000, 0);
       imageAlt: "Neptune Mutual Careers Open Graph Banner",
     }}
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link slot="header" rel="stylesheet" href="/stylesheets/careers/index.css" />
 
   <Careers vacancies={vacancies} />
 

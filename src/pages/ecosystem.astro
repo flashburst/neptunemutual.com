@@ -4,7 +4,6 @@ import Ecosystem from "../views/Ecosystem.astro";
 import Seo from "../components/Seo.astro";
 
 import * as api from "../../service/api";
-import styles from "./ecosystem.scss?inline";
 import { Api } from "../../types/enum";
 
 const items = await api.getEnumerable<Ecosystem>(Api.Ecosystem, 1000, 0);
@@ -20,7 +19,7 @@ const items = await api.getEnumerable<Ecosystem>(Api.Ecosystem, 1000, 0);
       imageAlt: "Neptune Mutual Decentralized Ecosystem",
     }}
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link slot="header" rel="stylesheet" href="/stylesheets/ecosystem.css" />
   <Ecosystem items={items} />
 
   <Fragment slot="footer">

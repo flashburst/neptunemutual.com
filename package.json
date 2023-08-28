@@ -11,6 +11,7 @@
     "astro": "astro",
     "lint": "eslint .",
     "fix": "eslint --fix .",
+    "style": "sass --watch src/pages:public/stylesheets --no-source-map",
     "check:links": "blc http://localhost:3001 -ro --exclude-external --follow --requests 250 --recursive --verbose --filter-level 3"
   },
   "license": "LicenseRef-LICENSE",

@@ -4,7 +4,6 @@ import Blog from "../../../../../views/Blog.astro";
 import Seo from "../../../../../components/Seo.astro";
 
 import * as api from "../../../../../../service/api";
-import styles from "../page.scss?inline";
 import { Api } from "../../../../../../types/enum";
 
 interface Props {
@@ -53,7 +52,11 @@ const { tag, data, currentPage, totalPages } = Astro.props;
     }}
     noindex
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link
+    slot="header"
+    rel="stylesheet"
+    href="/stylesheets/blog/tag/[slug]/page.css"
+  />
 
   <Blog
     tag={tag}

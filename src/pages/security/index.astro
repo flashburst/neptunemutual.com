@@ -5,7 +5,6 @@ import Security from "../../views/Security.astro";
 import Seo from "../../components/Seo.astro";
 
 import * as api from "../../../service/api";
-import styles from "./index.scss?inline";
 import { Api } from "../../../types/enum";
 
 const result = await api.getEnumerable<Audit>(Api.Audit, 1000, 0);
@@ -26,7 +25,7 @@ const audits = Enumerable.from(result)
       imageAlt: "Neptune Mutual Security and Cyber Hygiene Open Graph Banner",
     }}
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link slot="header" rel="stylesheet" href="/stylesheets/security/index.css" />
   <Security audits={audits} />
 
   <Fragment slot="footer">

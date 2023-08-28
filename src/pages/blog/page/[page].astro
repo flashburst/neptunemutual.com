@@ -4,7 +4,6 @@ import Blog from "../../../views/Blog.astro";
 import Seo from "../../../components/Seo.astro";
 
 import * as api from "../../../../service/api";
-import styles from "./page.scss?inline";
 import { Api } from "../../../../types/enum";
 
 export async function getStaticPaths() {
@@ -42,7 +41,7 @@ const props = Astro.props;
     }}
     noindex
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link slot="header" rel="stylesheet" href="/stylesheets/blog/page/page.css" />
 
   <Blog
     articles={props.data}

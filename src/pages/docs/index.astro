@@ -6,7 +6,6 @@ import Seo from "../../components/Seo.astro";
 import * as api from "../../../service/api";
 import * as dns from "../../../util/dns";
 
-import styles from "./index.scss?inline";
 import { Api } from "../../../types/enum";
 import Enumerable from "linq";
 
@@ -33,7 +32,7 @@ const ogImageUrl = page.meta.image?.url
     }}
     canonical={`docs/${page.slug}/`}
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link slot="header" rel="stylesheet" href="/stylesheets/docs/index.css" />
   <Docs items={pages} page={page} />
 
   <Fragment slot="footer">

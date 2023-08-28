@@ -3,8 +3,6 @@ import Seo from "../../components/Seo.astro";
 import { converterData } from "../../data/converter";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Converter from "../../views/Converter.astro";
-import styles from "./converter.scss?inline";
-
 export async function getStaticPaths() {
   return converterData.map((data) => {
     const [from, to] = data.shortTitle.split(" to ");
@@ -34,7 +32,11 @@ const { title, shortTitle, description, ogImage, ogImageAlt } = Astro.props;
       imageAlt: ogImageAlt,
     }}
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link
+    slot="header"
+    rel="stylesheet"
+    href="/stylesheets/web3-tools/converter.css"
+  />
   <Converter shortTitle={shortTitle} />
 
   <Fragment slot="footer">

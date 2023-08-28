@@ -4,7 +4,6 @@ import Pressroom from "../../views/Pressroom.astro";
 import Seo from "../../components/Seo.astro";
 
 import * as api from "../../../service/api";
-import styles from "./index.scss?inline";
 import { Api } from "../../../types/enum";
 import HackDatabase from "../../views/HackDatabase.astro";
 
@@ -22,7 +21,11 @@ const hacks = await api.getEnumerable<Hack>(Api.Hack, 20, 0);
         "Neptune Mutual DeFi and Cryptocurrency Hacks Open Graph Banner",
     }}
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link
+    slot="header"
+    rel="stylesheet"
+    href="/stylesheets/hack-database/index.css"
+  />
 
   <HackDatabase hacks={hacks} />
 

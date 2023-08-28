@@ -4,7 +4,6 @@ import Blog from "../../views/Blog.astro";
 import Seo from "../../components/Seo.astro";
 
 import * as api from "../../../service/api";
-import styles from "./index.scss?inline";
 import { Api } from "../../../types/enum";
 
 const POSTS_PER_PAGE = 9;
@@ -23,7 +22,7 @@ const { totalPages, pages } = paginated;
       imageAlt: "Neptune Mutual Blog Open Graph Banner",
     }}
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link slot="header" rel="stylesheet" href="/stylesheets/blog/index.css" />
   <Blog articles={pages[1].slice(3)} currentPage={1} totalPages={totalPages} />
 
   <Fragment slot="footer">

@@ -2,8 +2,6 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Seo from "../../../components/Seo.astro";
 
-import styles from "../protocol.scss?inline";
-
 import * as api from "../../../../service/api";
 import { Api } from "../../../../types/enum";
 import HeaderSection from "../../../components/HeaderSection.astro";
@@ -17,14 +15,18 @@ const t = (x: string) => x;
 <BaseLayout headerStyle={"colored"}>
   <Seo
     slot="seo"
-    title="Neptune Mutual Protocol Contracts on Arbitrum"
-    description="View all Neptune Mutual Protocol contracts on Arbitrum"
+    title="cXTokens / Neptune Mutual Protocol Contracts on Arbitrum"
+    description="View all cxToken contracts of the Neptune Mutual Protocol on Arbitrum"
     og={{
       image: "/assets/images/meta/og/protocol-contracts.png",
-      imageAlt: "Neptune Mutual Protocol Contracts on Arbitrum",
+      imageAlt: "cXTokens / Neptune Mutual Protocol Contracts on Arbitrum",
     }}
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link
+    slot="header"
+    rel="stylesheet"
+    href="/stylesheets/protocol/protocol.css"
+  />
 
   <HeaderSection
     color={"basic"}
@@ -34,7 +36,7 @@ const t = (x: string) => x;
 
   <ProtocolContracts
     networkId={42161}
-    type={"contracts"}
+    type={"cxTokens"}
     data={paginated.data}
   />
 

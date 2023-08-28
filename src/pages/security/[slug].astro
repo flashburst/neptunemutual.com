@@ -4,8 +4,6 @@ import SecurityDetail from "../../views/SecurityDetail.astro";
 import Seo from "../../components/Seo.astro";
 
 import * as api from "../../../service/api";
-import styles from "./slug.scss?inline";
-
 interface Props {
   audit: Audit;
 }
@@ -42,7 +40,7 @@ const ogImageUrl = audit.meta.image?.url
       imageAlt: audit.meta.image?.alt,
     }}
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link slot="header" rel="stylesheet" href="/stylesheets/security/slug.css" />
   <SecurityDetail audit={audit} />
   <Fragment slot="footer">
     <script src="../../scripts/security/slug.js"></script>

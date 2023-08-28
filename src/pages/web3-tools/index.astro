@@ -2,8 +2,6 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Seo from "../../components/Seo.astro";
 import Web3Tools from "../../views/Web3Tools.astro";
-
-import styles from "./index.scss?inline";
 ---
 
 <BaseLayout>
@@ -16,7 +14,11 @@ import styles from "./index.scss?inline";
       imageAlt: "Web3 Tools by Neptune Mutual",
     }}
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link
+    slot="header"
+    rel="stylesheet"
+    href="/stylesheets/web3-tools/index.css"
+  />
   <Web3Tools />
 
   <Fragment slot="footer">

@@ -2,8 +2,6 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Seo from "../../components/Seo.astro";
 import SolidityAbiEncoder from "../../views/SolidityAbiEncoder.astro";
-
-import styles from "./solidity-abi-encoder-online.scss?inline";
 ---
 
 <BaseLayout>
@@ -16,7 +14,11 @@ import styles from "./solidity-abi-encoder-online.scss?inline";
       imageAlt: "Solidity ABI Encoder",
     }}
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link
+    slot="header"
+    rel="stylesheet"
+    href="/stylesheets/web3-tools/solidity-abi-encoder-online.css"
+  />
   <SolidityAbiEncoder />
 
   <Fragment slot="footer">

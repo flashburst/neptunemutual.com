@@ -4,7 +4,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Seo from "../../components/Seo.astro";
 
 import { getRelatedPosts } from "../../../util/getRelated";
-import styles from "./slug.scss?inline";
 import * as api from "../../../service/api";
 import * as dns from "../../../util/dns";
 import { Api } from "../../../types/enum";
@@ -29,7 +28,9 @@ const { post, related } = Astro.props;
 
 const imgUrl = post.meta.image?.url || post.cover?.url;
 
-const ogImageUrl = imgUrl ? new URL(`cdn/${imgUrl.split("/").pop()}`, dns.getDns()).pathname : "/assets/images/meta/og/home.png";
+const ogImageUrl = imgUrl
+  ? new URL(`cdn/${imgUrl.split("/").pop()}`, dns.getDns()).pathname
+  : "/assets/images/meta/og/home.png";
 ---
 
 <BaseLayout headerStyle="default">
@@ -42,8 +43,13 @@ const ogImageUrl = imgUrl ? new URL(`cdn/${imgUrl.split("/").pop()}`, dns.getDns
       imageAlt: post.meta.image?.alt,
     }}
   />
-  <style slot="header" is:inline set:html={styles}></style>
-  <BlogPost structured={"BlogPosting"} type={Api.Blog} post={post} related={related} />
+  <link slot="header" rel="stylesheet" href="/stylesheets/blog/slug.css" />
+  <BlogPost
+    structured={"BlogPosting"}
+    type={Api.Blog}
+    post={post}
+    related={related}
+  />
   <Fragment slot="footer">
     <script src="../../scripts/blog/slug.js"></script>
   </Fragment>

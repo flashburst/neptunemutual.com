@@ -3,7 +3,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import GrantsAndBounties from "../../views/GrantsAndBounties.astro";
 import Seo from "../../components/Seo.astro";
 
-import styles from "./index.scss?inline";
 import * as api from "../../../service/api";
 import { Api } from "../../../types/enum";
 
@@ -20,7 +19,11 @@ const programs = await api.getEnumerable<Program>(Api.Program, 1000, 0);
       imageAlt: "Neptune Mutual Grants and Bounties Open Graph Banner",
     }}
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link
+    slot="header"
+    rel="stylesheet"
+    href="/stylesheets/grants-and-bounties/index.css"
+  />
   <GrantsAndBounties programs={programs} />
 
   <Fragment slot="footer">

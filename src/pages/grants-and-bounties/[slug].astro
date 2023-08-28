@@ -4,7 +4,6 @@ import ProgramDetail from "../../views/ProgramDetail.astro";
 import Seo from "../../components/Seo.astro";
 
 import * as api from "../../../service/api";
-import styles from "./slug.scss?inline";
 import * as dns from "../../../util/dns";
 import { Api } from "../../../types/enum";
 
@@ -41,7 +40,11 @@ const ogImageUrl = program.meta.image?.url
       imageAlt: program.meta.image?.alt,
     }}
   />
-  <style slot="header" is:inline set:html={styles}></style>
+  <link
+    slot="header"
+    rel="stylesheet"
+    href="/stylesheets/grants-and-bounties/slug.css"
+  />
   <ProgramDetail program={program} />
 
   <Fragment slot="footer">
